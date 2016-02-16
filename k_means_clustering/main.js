@@ -21,3 +21,14 @@ var data = [
     [8, 11],
     [9, 9],
 ];
+
+//establish the limits
+function getDataLimits(limits){
+    var minMax = [];
+
+    for (var dimensions in limits){
+        minMax[dimension] = limits[dimensin].max - limits[dimension].min;
+    }
+
+    return minMax;
+}
