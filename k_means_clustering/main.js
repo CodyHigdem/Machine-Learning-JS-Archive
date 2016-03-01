@@ -32,3 +32,35 @@ function getDataLimits(limits){
 
     return minMax;
 }
+
+function getDataExtremes(points){
+
+    var extremes = [];
+
+    for (var i in data){
+        var point = data[i];
+
+        vor ( var dimension in point) {
+            if (!extremes[dimension]){
+
+            extremes[dimension] = { min: 1000, max: 0};
+}
+
+            if (point[dimension] < extremes[dimension].min){
+                extremes[dimension].min = point[dimension];
+            }
+
+            if (point[dimension] > extremes[dimension].max)            {
+                extremes[dimension].max = point[dimension];
+            }
+
+
+
+
+        }
+
+
+    }
+
+    return extremes;
+}
