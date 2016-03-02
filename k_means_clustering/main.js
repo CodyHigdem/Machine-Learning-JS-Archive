@@ -33,6 +33,12 @@ function getDataLimits(limits){
     return minMax;
 }
 
+/*
+Loops through all the points and each dimension in each of the points.
+Hardcoded is '1000' for now just to dabble
+
+*/
+
 function getDataExtremes(points){
 
     var extremes = [];
@@ -50,7 +56,7 @@ function getDataExtremes(points){
                 extremes[dimension].min = point[dimension];
             }
 
-            if (point[dimension] > extremes[dimension].max)            {
+            if (point[dimension] > extremes[dimension].max){
                 extremes[dimension].max = point[dimension];
             }
 
@@ -64,3 +70,21 @@ function getDataExtremes(points){
 
     return extremes;
 }
+
+function initmeans(k){
+
+    if (! k){
+        k = 3;
+    }
+
+    while (k--){
+        var mean = [];
+
+        for (var dimension in dataExtremes){
+            mean[dimension] = dataExtremes[dimension].min + (Math.random()*dataRange[dimension] );
+        }
+
+        means.push(mean);
+    }
+    return means;
+};
