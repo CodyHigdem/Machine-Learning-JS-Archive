@@ -88,3 +88,25 @@ function initmeans(k){
     }
     return means;
 };
+
+function makeAssignments(){
+    for (var i in data){
+        var point = data[i];
+        var distances = [];
+
+        for (var j in means){
+            var mean = means[j];
+            var sum = 0;
+
+            for (var dimension in point){
+                var difference = point[dimension - mean[dimension];
+                difference *= difference;
+                sum += difference;
+            }
+
+            distances[j] = Math.sqrt(sum);
+        }
+
+        assignments[i] = distances.indexOf ( Math.min.apply(null , distances) );
+    }
+};
